@@ -11,7 +11,7 @@
       </include>
 
     <executable         
-        cmd="bash -c 'sleep 3; $0 $@'; ros2 launch moveit_ur5_interface moveit_ur5.launch.py"        
+        cmd="bash -c 'sleep 3; $0 $@'; ros2 launch ur_moveit_config ur_moveit.launch.py ur_type:=ur5e launch_rviz:=false"
         cwd="./">    
     </executable>
 
