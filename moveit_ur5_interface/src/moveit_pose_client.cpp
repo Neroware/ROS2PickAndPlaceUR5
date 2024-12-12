@@ -26,7 +26,7 @@ namespace moveit_ur5{
 		std::cout << "client: sending" << std::endl;
 		auto result = ros_client->async_send_request(request, std::bind(&client::callback, this, std::placeholders::_1 ));
 		std::cout << "client: sent" << std::endl;
-		return result;
+		return result.future;
 	}
 
 	// overload
@@ -36,7 +36,7 @@ namespace moveit_ur5{
 		std::cout << "client: sending" << std::endl;
 		auto result = ros_client->async_send_request(request, std::bind(&client::callback, this, std::placeholders::_1 ));
 		std::cout << "client: sent" << std::endl;
-		return result;
+		return result.future;
 	}
 	
 	void client::callback(const rclcpp::Client<moveit_ur5_msgs::srv::PlanRequest>::SharedFuture future){

@@ -1,6 +1,6 @@
 <launch>
 
-      <include file="$(find-pkg-share ur5_gripper_moveit_config)/launch/ur5_gripper_moveit.launch.py"/>
+      <!-- include file="$(find-pkg-share ur5_gripper_moveit_config)/launch/ur5_gripper_moveit.launch.py"/ -->
 
       <include file="$(find-pkg-share ur_bringup)/launch/ur_control.launch.py">
         <arg name="ur_type" value="ur5e"/>

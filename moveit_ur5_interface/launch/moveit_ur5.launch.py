@@ -64,13 +64,36 @@ def get_robot_description():
     robot_description = {"robot_description": robot_description_content}
     return robot_description
 
+# def get_robot_description_semantic():
+#     # MoveIt Configuration
+#     robot_description_semantic_content = Command(
+#         [
+#             PathJoinSubstitution([FindExecutable(name="xacro")]),
+#             " ",
+#             PathJoinSubstitution([FindPackageShare("ur5_gripper_moveit_config"), "srdf", "ur_gripper.srdf.xacro"]),
+#             " ",
+#             "name:=",
+#             # Also ur_type parameter could be used but then the planning group names in yaml
+#             # configs has to be updated!
+#             "ur",
+#             " ",
+#             "prefix:=",
+#             '""',
+#             " ",
+#         ]
+#     )
+#     robot_description_semantic = {
+#         "robot_description_semantic": robot_description_semantic_content
+#     }
+#     return robot_description_semantic
+
 def get_robot_description_semantic():
     # MoveIt Configuration
     robot_description_semantic_content = Command(
         [
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
-            PathJoinSubstitution([FindPackageShare("ur5_gripper_moveit_config"), "srdf", "ur_gripper.srdf.xacro"]),
+            PathJoinSubstitution([FindPackageShare("ur_moveit_config"), "srdf", "ur.srdf.xacro"]),
             " ",
             "name:=",
             # Also ur_type parameter could be used but then the planning group names in yaml
